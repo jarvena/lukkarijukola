@@ -149,8 +149,18 @@ var lyr_kilpailukielto_2 = new ol.layer.Vector({
                 title: '<img src="styles/legend/kilpailukielto_2.png" /> Kilpailukielto'
             });
 
+var lyr_vinovalo = new ol.layer.Tile({
+    title: "Maastonmuodot",
+    source: new ol.source.XYZ({
+        attribution: "Trailmap.fi",
+        url: 'https://static.trailmap.fi/varjomap/{z}/{x}/{y}.png',
+        maxzoom: 14
+    })
+})
+
+lyr_vinovalo.setVisible(false)
 lyr_MapAnt_0.setVisible(true);lyr_Lukkari_Jukola_vanha_georeferenced_1.setVisible(true);lyr_kilpailukielto_2.setVisible(true);
-var layersList = [lyr_MapAnt_0,lyr_Lukkari_Jukola_vanha_georeferenced_1,lyr_kilpailukielto_2];
+var layersList = [lyr_MapAnt_0,lyr_Lukkari_Jukola_vanha_georeferenced_1,lyr_vinovalo,lyr_kilpailukielto_2];
 lyr_kilpailukielto_2.set('fieldAliases', {'name': 'name', 'club': 'club', 'contact_person': 'contact_person', 'email': 'email', 'www': 'www', 'aluevoimassa_alkaa': 'aluevoimassa_alkaa', 'aluevoimassa_loppuu': 'aluevoimassa_loppuu', 'lisatiedot': 'lisatiedot', 'phone': 'phone', 'mittakaava': 'mittakaava', 'maastotyyppi': 'maastotyyppi', 'maaston_erityispiirteet': 'maaston_erityispiirteet', 'maaston_korkeus': 'maaston_korkeus', 'valmistumisvuosi': 'valmistumisvuosi', 'osoite': 'osoite', 'kl_numero': 'kl_numero', 'kv_numero': 'kv_numero', 'sijainti': 'sijainti', 'alue': 'alue', 'raporttinumero': 'raporttinumero', 'kartanlaji': 'kartanlaji', 'kayravali': 'kayravali', 'club_id': 'club_id', 'file': 'file', });
 lyr_kilpailukielto_2.set('fieldImages', {'name': 'TextEdit', 'club': 'TextEdit', 'contact_person': 'TextEdit', 'email': 'TextEdit', 'www': 'TextEdit', 'aluevoimassa_alkaa': 'DateTime', 'aluevoimassa_loppuu': 'DateTime', 'lisatiedot': 'TextEdit', 'phone': 'TextEdit', 'mittakaava': 'TextEdit', 'maastotyyppi': 'TextEdit', 'maaston_erityispiirteet': 'TextEdit', 'maaston_korkeus': 'TextEdit', 'valmistumisvuosi': 'TextEdit', 'osoite': 'TextEdit', 'kl_numero': 'TextEdit', 'kv_numero': 'TextEdit', 'sijainti': 'TextEdit', 'alue': 'TextEdit', 'raporttinumero': 'TextEdit', 'kartanlaji': 'TextEdit', 'kayravali': 'TextEdit', 'club_id': 'TextEdit', 'file': 'TextEdit', });
 lyr_kilpailukielto_2.set('fieldLabels', {'name': 'no label', 'club': 'no label', 'contact_person': 'no label', 'email': 'no label', 'www': 'no label', 'aluevoimassa_alkaa': 'no label', 'aluevoimassa_loppuu': 'no label', 'lisatiedot': 'no label', 'phone': 'no label', 'mittakaava': 'no label', 'maastotyyppi': 'no label', 'maaston_erityispiirteet': 'no label', 'maaston_korkeus': 'no label', 'valmistumisvuosi': 'no label', 'osoite': 'no label', 'kl_numero': 'no label', 'kv_numero': 'no label', 'sijainti': 'no label', 'alue': 'no label', 'raporttinumero': 'no label', 'kartanlaji': 'no label', 'kayravali': 'no label', 'club_id': 'no label', 'file': 'no label', });

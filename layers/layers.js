@@ -143,7 +143,7 @@ var jsonSource_kilpailukielto_2 = new ol.source.Vector({
 jsonSource_kilpailukielto_2.addFeatures(features_kilpailukielto_2);
 var lyr_kilpailukielto_2 = new ol.layer.Vector({
                 declutter: true,
-                source:jsonSource_kilpailukielto_2, 
+                source: jsonSource_kilpailukielto_2, 
                 style: style_kilpailukielto_2,
                 interactive: false,
                 title: '<img src="styles/legend/kilpailukielto_2.png" /> Kilpailukielto'
@@ -158,9 +158,25 @@ var lyr_vinovalo = new ol.layer.Tile({
     })
 })
 
+var features_kisakeskus = format_kilpailukielto_2.readFeatures(json_kisakeskus,
+  {dataProjection: 'EPSG:3857', featureProjection: 'EPSG:3857'})
+var lyr_kisakeskus = new ol.layer.Vector({
+  title: '<img src="styles/legend/keskus.png" /> Lähtö/maalialue',
+  source: new ol.source.Vector({
+    features: features_kisakeskus,
+  }),
+  style: function(feature, resolution) {
+    console.log('resolution', resolution)
+    return new ol.style.Style({
+      stroke: new ol.style.Stroke({color: 'rgba(255,1,255,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 3/resolution**0.5}),fill: new ol.style.Fill({color: 'rgba(114,155,111,0.0)'})
+    })
+  }
+})
+
+
 lyr_vinovalo.setVisible(false)
-lyr_MapAnt_0.setVisible(true);lyr_Lukkari_Jukola_vanha_georeferenced_1.setVisible(true);lyr_kilpailukielto_2.setVisible(true);
-var layersList = [lyr_MapAnt_0,lyr_Lukkari_Jukola_vanha_georeferenced_1,lyr_vinovalo,lyr_kilpailukielto_2];
+lyr_MapAnt_0.setVisible(true);lyr_Lukkari_Jukola_vanha_georeferenced_1.setVisible(true);lyr_kilpailukielto_2.setVisible(true);lyr_kisakeskus.setVisible(true)
+var layersList = [lyr_MapAnt_0,lyr_Lukkari_Jukola_vanha_georeferenced_1,lyr_vinovalo,lyr_kilpailukielto_2,lyr_kisakeskus];
 lyr_kilpailukielto_2.set('fieldAliases', {'name': 'name', 'club': 'club', 'contact_person': 'contact_person', 'email': 'email', 'www': 'www', 'aluevoimassa_alkaa': 'aluevoimassa_alkaa', 'aluevoimassa_loppuu': 'aluevoimassa_loppuu', 'lisatiedot': 'lisatiedot', 'phone': 'phone', 'mittakaava': 'mittakaava', 'maastotyyppi': 'maastotyyppi', 'maaston_erityispiirteet': 'maaston_erityispiirteet', 'maaston_korkeus': 'maaston_korkeus', 'valmistumisvuosi': 'valmistumisvuosi', 'osoite': 'osoite', 'kl_numero': 'kl_numero', 'kv_numero': 'kv_numero', 'sijainti': 'sijainti', 'alue': 'alue', 'raporttinumero': 'raporttinumero', 'kartanlaji': 'kartanlaji', 'kayravali': 'kayravali', 'club_id': 'club_id', 'file': 'file', });
 lyr_kilpailukielto_2.set('fieldImages', {'name': 'TextEdit', 'club': 'TextEdit', 'contact_person': 'TextEdit', 'email': 'TextEdit', 'www': 'TextEdit', 'aluevoimassa_alkaa': 'DateTime', 'aluevoimassa_loppuu': 'DateTime', 'lisatiedot': 'TextEdit', 'phone': 'TextEdit', 'mittakaava': 'TextEdit', 'maastotyyppi': 'TextEdit', 'maaston_erityispiirteet': 'TextEdit', 'maaston_korkeus': 'TextEdit', 'valmistumisvuosi': 'TextEdit', 'osoite': 'TextEdit', 'kl_numero': 'TextEdit', 'kv_numero': 'TextEdit', 'sijainti': 'TextEdit', 'alue': 'TextEdit', 'raporttinumero': 'TextEdit', 'kartanlaji': 'TextEdit', 'kayravali': 'TextEdit', 'club_id': 'TextEdit', 'file': 'TextEdit', });
 lyr_kilpailukielto_2.set('fieldLabels', {'name': 'no label', 'club': 'no label', 'contact_person': 'no label', 'email': 'no label', 'www': 'no label', 'aluevoimassa_alkaa': 'no label', 'aluevoimassa_loppuu': 'no label', 'lisatiedot': 'no label', 'phone': 'no label', 'mittakaava': 'no label', 'maastotyyppi': 'no label', 'maaston_erityispiirteet': 'no label', 'maaston_korkeus': 'no label', 'valmistumisvuosi': 'no label', 'osoite': 'no label', 'kl_numero': 'no label', 'kv_numero': 'no label', 'sijainti': 'no label', 'alue': 'no label', 'raporttinumero': 'no label', 'kartanlaji': 'no label', 'kayravali': 'no label', 'club_id': 'no label', 'file': 'no label', });
